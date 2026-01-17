@@ -26,7 +26,7 @@ primitive DS :- These are pre-existing (already defined/avaialable data structur
                 easy to use
                 less-complex
                 fixed size
-Example : Int, float, boolean, char, double
+Example : Int - 4 Bytes, float - 8 Bytes, boolean, char, double
 
 non-primitve (derived) DS :- These are derived data structures which uses primitve ds
                              as part of it.
@@ -41,6 +41,32 @@ non-primitve (derived) DS :- These are derived data structures which uses primit
                              Hash table
                              Hashmap
                              trie
+
+   
+   -------------------------------Types of non-linear Data structures--------------------
             
+1. Linear Data structure : In linear DS elements are stores in sequential order
+                           every element is connected to one previous and one next element 
+                           (
+                            exept the first and last one
+                            first element is only connected to one next element
+                            last element is only connected to one previous element
+                           )
+
+                           Traversal on elements is easy
+                           simpler to implement
+                           Memory can be contiguos (Array, stack, queue) or non-contiguos (linked-list)
+
+2. Non-Linear DS : In non linear DS the elements gets stored in heirarchical order
+                   there can be multiple paths of traversal
+                   Complex to understand
+                   difficult in implementation
+
+                   (From interview point of view......--> This is very very important)
+
+                   Tree
+                   Graph
+                   HashMap
+                   Heap
 
 */
