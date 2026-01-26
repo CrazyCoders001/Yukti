@@ -12,9 +12,20 @@ step 3 : How to access each/any array element
 
 */
 
+// i have an array
+// arr = {1, 'a', "string"};
 
 
-#include<bits/stdc++.h>
+// #include<iostream>       // import iostream library
+// // cout, cin, std
+// #include<cmath>
+// #include<climits>
+
+
+#include<bits/stdc++.h>  // bits/stdc++.h
+// it is faster way of importing libraries
+// its a bucket of different types of libraries which contains almost 
+// every needful functionalities to solve the problem
 using namespace std;
 
 int main()  // main is the entry point of the code
@@ -34,6 +45,8 @@ int main()  // main is the entry point of the code
     // arr[2] = 30;
     // arr[3] = 40;
     // arr[4] = 50;
+
+    int var = INT_MAX;
 
     cout<<"please enter array elements :- "<<endl;
     for(int i=0; i<5; i++)
