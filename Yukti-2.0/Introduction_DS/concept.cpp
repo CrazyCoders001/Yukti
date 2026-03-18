@@ -46,7 +46,11 @@ Tell me your preferences --> 1 / 2 / 3
 
 
 
-// How to write efficient code
+// How to write efficient code 
+
+// What do you mean by efficient code
+--> a block of code which take less runtime (the code is faster to execute) and less storage(memory) of the system 
+
 // Time complexity and space complexity O(n)
 // Types of Data structure
 
