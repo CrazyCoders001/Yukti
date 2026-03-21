@@ -23,7 +23,7 @@ Types Time and space functions
 6. O(2^n)   ---- Exponential 
 
 Performance graph
-O(1) < O(n) < O(log n) < O(n^2) < O(n^3) < O(n^n)
+O(1) < O(log n) < O(n) < O(n log n) < O(n^2) < O(n^3) < O(n^n)
 
 example
 
@@ -121,6 +121,7 @@ Time complexity = O(1) + O(1) + (n/2)
 Space complexity = O(1) -- Constant
 
 
+O(log n) ---- Logarithmic
 {
     int n;
     cin>>n;   // n = 12
@@ -154,4 +155,58 @@ What is your K = Amount of time rquired to run the code
 Time complexity = O(log n)
 space complexity = O(1)
 
+
+{
+    int n;                             -- O(1)
+    cin>>n;   //Input                  -- O(1)
+
+    int arr[n];                        -- O(1);
+
+    //suppose n =  7
+    for(int i=1; i<=n; i++)
+    {
+        for(int j=1; j<=n; j++)      for i=1, j=1,2,3,4,5,6,7
+        {                            for i=2, j=1,2,3,4,5,6,7
+            int num;                 for i=3, j=1,2,3,4,5,6,7        Total iteration = 25  -- O(n^2)
+            cin>>num;                for i=4, j=1,2,3,4,5,6,7
+            arr[j] = num;            for i=5, j=1,2,3,4,5,6,7
+        }                            for i=6, j=1,2,3,4,5,6,7
+    }                                for i=7, j=1,2,3,4,5,6,7
+}
+
+
+Time complexity  -- O(n^2)
+when n = 5, the loop iteration = 25  = (5*5)  = n*n = n^2
+when n = 7, the loop iteration = 49  = (7*7)  = n*n = n^2
+when n = 3, the loop iteration = 9   = (3*3)  = n*n = n^2
+
+O(1) + O(1) + O(1) + O(n^2) + O(n^2) + O(n^2)
+O(1+1+1+n^2+n^2+n^2)
+O(3+3n^2)
+O(3n^2)
+O(n^2)
+
+
+Space complexity -- O(n)
+-- We are using 4 integer variables in above code block - O(4) - 4*4 Bytes = 16 Bytes
+-- We are also taking an integer array of size n
+-- Which means the size of array is as big as the value of n
+
+for example n = 5
+arr = 1,2,3,4,5
+
+n = 7
+arr = 1,2,3,4,5,6,7
+
+we need constant space of 16 Bytes + array memory of n*4 Bytes
+= O(4+n)
+= O(n)
+
+
+
+If i give you the code block, can you be able to figure out its time and space complexity?
+
+// Data structure :-
+// Types of data structure
+// Classification of Data structures
 */
