@@ -62,13 +62,24 @@ Classification of data structure
         Thats why it is called as Dyanamic data structure
 
         - Linked list
-        - Stack (implemented using linked-list)
+        - Stack (implemented using linked-list) -- By default stack and queue comes under dynamic memory allocation
         - Queue (implemented using linked-list)
         - graph
         - tree
 
 
         Contigous Memory allocation VS non-contiguos memory allocation
+
+
+    iv. Based on data access speed/convinience
+        - Fast data access/update/addition (Index -> first element : 0, second : 1, and so on)
+          Array is the best example of fast data accesss
+        - slow data access/update/addition
+          Linked List - If somebody says you to update mid element
+          Graph
+          Tree
+          Stack
+          
 
 
 
