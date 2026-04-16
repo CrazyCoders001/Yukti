@@ -21,4 +21,34 @@ int main()
         output = 24
 
     */
+
+   int row, col;
+   cout<<"ennter the row and col values : ";
+   cin>>row>>col;
+
+   int twoD_array[row][col];
+   cout<<"enter 2D array elements"<<endl;
+   for(int i=0; i<row; i++)
+   {
+        for(int j=0; j<col; j++)
+        {
+            cin>>twoD_array[i][j];
+        }
+   }
+
+   int sum =0;
+   for(int i=0; i<row; i++)
+   {
+    for(int j=0; j<col; j++)
+    {
+        int current_num = twoD_array[i][j];
+        if((i+j)%2 == 1)
+        {
+            sum += current_num;
+        }
+    }
+   }
+
+   cout<<"The sum of all elements whose index sum is odd = "<<sum<<endl;
+
 }
