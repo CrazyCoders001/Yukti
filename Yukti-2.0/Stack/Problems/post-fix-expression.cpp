@@ -76,8 +76,8 @@ int main()
         }
         else
         {
-            int num1 = pop(st, top);
             int num2 = pop(st, top);
+            int num1 = pop(st, top);
 
             if(ch == '+')   push(num1+num2, st, top);
             if(ch == '*')   push(num1*num2, st, top);
