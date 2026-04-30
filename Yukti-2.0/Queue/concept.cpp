@@ -4,6 +4,16 @@ using namespace std;
 int front = -1, rare = -1;
 int q[SIZE];
 
+bool isQueueFull()
+{
+    //if the rare index is at SIZE-1 then the queue is already full
+    if(rare == SIZE-1)
+    {
+        return true;
+    }
+    return false;
+}
+
 bool isQueueEmpty()
 {
     //if front and rare both are at -1 that means queue is empty
@@ -18,7 +28,7 @@ bool isQueueEmpty()
 void Enqueue(int data)
 {
     //When rare is at size-1 that means the queue is full, and you cannot add more elements
-    if(rare==SIZE-1)
+    if(isQueueFull())
     {
         cout<<"The Queue is full, Hence cannot add value "<<data<<" inside the queue"<<endl;
         return;
@@ -35,8 +45,43 @@ void Enqueue(int data)
     }
 }
 
+void Dequeue()
+{
+    //What if the queue is empty
+    if(isQueueEmpty())
+    {
+        cout<<"The Queue is already empty, cannot delete anything from it....!"<<endl;
+        return;
+    }
+
+    //what is the queue has only one element
+    if(front == rare)
+    {
+        //when both front and rare are at same value/position
+        //The the queue has only one element left
+        //Delete it and reset
+        //front and rare by -1
+        cout<<"Deleting element : "<<q[front]<<" from the queue"<<endl;
+        front=-1;
+        rare=-1;
+        return;
+    }
+
+    //normal scenario
+    cout<<"Deleting element : "<<q[front]<<" from the queue"<<endl;
+    front++;
+    return;
+}
+
 void display()
 {
+
+    //Check if the queue is empty
+    if(isQueueEmpty())
+    {
+        cout<<"The Queue is Empty, Nothing to display....!"<<endl;
+        return;
+    }
     cout<<"The elements inside queue are"<<endl;
     for(int i=front; i<=rare; i++)
     {
@@ -82,10 +127,29 @@ int main()
                            Otherwise just increment the rare index by one (rare++)
                            assign/insert the value at rare index
 
-        2. Dequeue      :-
-        3. DisplayQueue :- 
-        4. isQueueEmpty :-
-        5. isQueueFull  :-
+        2. Dequeue      :- The Dequeue operation means deleting an element from the queue
+                           The deletion will happen from the front index
+
+                           First print the element which you want to delete 
+                           after that increment the front value by one (front++)
+
+                           Rules for Dequeue
+                           When the queue is empty in that case you cannot delete anything
+
+                           When there is only one element left in the queue, your front and rare
+                           both the index will point to the same position
+                           so in that case if you delete an element the queue will become empty
+                           reset the front and rare index to ?
+
+
+
+        3. DisplayQueue :- To display the queue, traverse from front index till the rare index
+
+        4. isQueueEmpty :- When both the front and rare index are at -1, then we can call
+                           The Queue is empty
+
+        5. isQueueFull  :- When the rare index is at SIZE-1 then you can call
+                           The Queue is full
     */
 
 
@@ -97,5 +161,18 @@ int main()
 
    display();
 
-   Enqueue(60);
+   Enqueue(60);  //this should give ...cant add msg
+
+   Dequeue();
+
+   display();
+   Dequeue();
+   Dequeue();
+   display();
+
+
+   Enqueue(100);   //Will it get added into the queue?
+   //you cannot add 100 here, bcoz this is a normal queue, and not a circular queue
+
+   //We can add/store the elements in the best optimal way by using circular queue
 }
