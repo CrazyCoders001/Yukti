@@ -54,7 +54,7 @@ void Dequeue()
         return;
     }
 
-    //what is the queue has only one element
+    //what if the queue has only one element
     if(front == rare)
     {
         //when both front and rare are at same value/position
