@@ -6,7 +6,7 @@ using namespace std;
 
 What is pointer :
 So the pointer is a concept in cpp/c by using that the programmer can directly get access to the memory
-A pointer is a variable which holds the memory address of another varibale
+A pointer is a variable which holds the memory address of another variable
 
 and 
 
@@ -60,6 +60,43 @@ int main()
 
     //Run this on your machine and tell me what *r will print   --> ?
 
+    // 3. Dangling Pointer : Here the pointer initially points to a memory address
+    //                       But later the memory address gets deleted and when the address gets deleted
+    //                       the pointer becomes dangling
+
+    //pointer points to memeory address
+    int *s = new int(10);
+    // The memory adrees gets deleted
+    delete s;
+
+    //as the result of above step, the pointer s becomes dangling hence it can start pointing to
+    //any sensitive memory location/adress on the machine, and this is very dangerous
+    //So to negate that, the solution on dangling pointer is to point that with NULL value;
+
+    s = NULL;
+
+
+    // 4. Pointer to Pointer (Double pointer)
+    // This stores memory address of another pointer, and that pointer stores the memory address of a variable
+
+    int var = 10;
+    int *t = &var;   //This is normal pointer
+
+    int **i = &t;   //This is double pointer
+
+    cout<<"Print the value of var using variable "<<var<<endl;
+    cout<<"Print the address of var "<<t<<endl;
+
+    cout<<"Print the value of var using the single pointer "<<*t<<endl;   //will print value 10
+    cout<<"Print the address of single pointer *t "<<&t<<endl;
+
+    cout<<"Print the value of var using the double pointer "<<**i<<endl;
+    cout<<"Print the address of single pointer **i "<<&i<<endl;
+
+
+    //C++ / GoLang / Infra development / Cloud Development / Game Development    :- Pointers
+    
+     
 
     cout<<"Hello world"<<endl;
 
