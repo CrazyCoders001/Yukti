@@ -69,7 +69,7 @@ int main()
     /*
 
     1. How to delete an elemnt from linked list
-    2. How to insert an eleent at any position in linked list
+    2. How to insert an element at any position in linked list
     
     
     */
